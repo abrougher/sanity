@@ -14,6 +14,7 @@ module.exports = async function deployApiActions(args, context) {
   })
 
   const dataset = flags.dataset || client.config().dataset
+  const tag = flags.tag || 'default'
   const enablePlayground =
     typeof flags.playground === 'undefined'
       ? await prompt.single({
@@ -49,7 +50,7 @@ module.exports = async function deployApiActions(args, context) {
 
   try {
     const response = await client.request({
-      url: `/apis/graphql/${dataset}/default`,
+      url: `/apis/graphql/${dataset}/${tag}`,
       method: 'PUT',
       body: {enablePlayground, schema},
       maxRedirects: 0
