@@ -2,7 +2,7 @@
 import React from 'react'
 import {isEmpty} from 'lodash'
 import Spinner from 'part:@sanity/components/loading/spinner'
-import sidecarConfig from 'part:@sanity/default-layout/sidecar-config'
+import studioHintsConfig from 'part:@sanity/default-layout/studio-hints-config'
 import {locationSetting, updateLocation} from '../datastore'
 import client from '../client'
 import Links from './Links'
@@ -26,7 +26,7 @@ export default class HintsPackage extends React.PureComponent {
       *[_type == "hintsPackage" && slug.current == $slug && !(_id in path('drafts.**'))][0]{
         _id, title, slug, links, hintsTitle,
         hints[]->{
-          _id, title, summary, 
+          _id, title, summary,
           body[]{
             ...,
             markDefs[] {
@@ -37,7 +37,7 @@ export default class HintsPackage extends React.PureComponent {
                   "type": ^._type
                 }
               }
-            }            
+            }
           }
         }
       }`
@@ -50,7 +50,7 @@ export default class HintsPackage extends React.PureComponent {
   }
 
   componentDidMount() {
-    const slug = sidecarConfig.options.hintsPackageSlug
+    const slug = studioHintsConfig.hintsPackageSlug
     this.fetchHintsPackage(slug)
 
     this.subscription = locationSetting.listen().subscribe(currentLocation => {
@@ -86,7 +86,7 @@ export default class HintsPackage extends React.PureComponent {
 
   render() {
     const {hintsPackage, error, activePage, isLoading} = this.state
-    const slug = sidecarConfig.options.hintsPackageSlug
+    const slug = studioHintsConfig.hintsPackageSlug
 
     if (!slug) {
       return this.renderError(
