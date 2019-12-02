@@ -16,7 +16,7 @@ function HintCard(props) {
    * that opens by clicking the card (onCardClick prop), that
    * then renders the HintPage.js component.
    */
-  /* 
+  /*
   <div className={styles.root} onClick={() => onCardClick(card._id)}>
     <h4 className={styles.cardTitle}>
       {card.title} <ArrowRight />
@@ -26,18 +26,18 @@ function HintCard(props) {
   */
   return (
     <a
-      href={`https://sanity.io/${resolveSegment[card._type]}/${card.slug.current}`}
+      href={`https://sanity.io/${resolveSegment[card.hint._type]}/${card.hint.slug.current}`}
       className={styles.root}
       target="_blank"
       rel="noopener noreferrer"
     >
       <h4 className={styles.cardTitle}>
-        {card.title}
+        {card.titleOverride || card.hint.title}
         <span className={styles.arrowUp}>
           <ArrowRight />
         </span>
       </h4>
-      <p className={styles.cardSummary}>{card.description}</p>
+      <p className={styles.cardSummary}>{card.hint.description}</p>
     </a>
   )
 }
