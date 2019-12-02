@@ -36,7 +36,7 @@
     color: inherit;
     padding: calc(var(--small-padding) + 0.25rem) var(--medium-padding);
     transition: all 0.2s linear;
-  
+
     @nest &:hover {
       color: var(--main-navigation-color--inverted);
       background: color(var(--main-navigation-color) l(+4%));
