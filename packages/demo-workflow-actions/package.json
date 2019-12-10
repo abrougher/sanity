@@ -1,0 +1,29 @@
+{
+  "name": "demo-workflow-actions",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "package.json",
+  "author": "Sanity.io <hello@sanity.io>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "sanity start",
+    "test": "sanity check"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@sanity/base": "^0.147.0",
+    "@sanity/components": "^0.147.0",
+    "@sanity/core": "^0.147.0",
+    "@sanity/default-layout": "^0.147.0",
+    "@sanity/default-login": "^0.147.0",
+    "@sanity/desk-tool": "^0.147.1",
+    "@sanity/react-hooks": "^0.147.0",
+    "@sanity/vision": "^0.147.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {}
+}

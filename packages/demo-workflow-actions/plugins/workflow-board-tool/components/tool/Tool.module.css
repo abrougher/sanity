@@ -1,0 +1,13 @@
+.root {
+  display: flex;
+  height: 100%;
+  box-sizing: border-box;
+
+  @nest & > div {
+    flex: 1;
+  }
+
+  @nest & > div + div {
+    border-left: 1px solid #ccc;
+  }
+}

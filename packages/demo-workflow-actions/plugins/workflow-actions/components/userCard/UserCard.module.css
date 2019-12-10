@@ -1,0 +1,19 @@
+.root {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 1.5em;
+  border-radius: 50%;
+  overflow: hidden;
+
+  @nest & img {
+    width: 100%;
+    vertical-align: top;
+  }
+}
+
+.displayName {
+  margin-left: 0.5em;
+}

@@ -1,0 +1,29 @@
+.root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 1em;
+}
+
+.title {
+  font-size: 14px;
+  margin: 0;
+  line-height: 1;
+}
+
+.content {
+  overflow: auto;
+  flex: 1;
+  padding: 1em;
+}
+
+.cardList {
+  position: relative;
+
+  @nest & > div + div {
+    margin-top: 0.5em;
+  }
+}

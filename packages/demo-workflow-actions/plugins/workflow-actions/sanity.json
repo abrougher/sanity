@@ -1,0 +1,12 @@
+{
+  "parts": [
+    {
+      "implements": "part:workflow-actions/actions",
+      "path": "./actions"
+    },
+    {
+      "implements": "part:workflow-actions/schemas",
+      "path": "./schemas"
+    }
+  ]
+}
